@@ -1,0 +1,9 @@
+{
+  "name": "corecv-ai-resume-compiler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CORE.CV — AI Resume Compiler (static frontend + Vercel serverless backend for Gemini calls)",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
