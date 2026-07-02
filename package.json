@@ -1,0 +1,12 @@
+{
+  "name": "corecv-ai-resume-compiler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CORE.CV — AI Resume Compiler (static frontend + Vercel serverless backend for Gemini calls + Firebase auth/credits)",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.7.0"
+  }
+}

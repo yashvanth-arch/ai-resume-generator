@@ -1,0 +1,23 @@
+rules_version = '2';
+
+// Deploy with: firebase deploy --only firestore:rules
+// (or paste into Firebase Console → Firestore Database → Rules)
+//
+// The users/{uid} documents (credits, etc.) are read and written
+// EXCLUSIVELY by the server via the Firebase Admin SDK in
+// /api/_lib/credits.js. The Admin SDK bypasses these rules entirely, which
+// is exactly why the client SDK must be locked out completely below —
+// otherwise a signed-in user could open devtools and edit their own
+// credits directly through the Firestore client SDK.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if false;
+    }
+
+    // Deny everything else by default.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
